@@ -42,7 +42,7 @@ const PetVaccinationPage = () => {
   useEffect(() => {
     const fetchOwners = async () => {
       try {
-        const res = await fetch("http://127.0.0.1:8000/api/owners/");
+        const res = await fetch("https://pawsnest-backend.onrender.com/api/owners/");
         if (!res.ok) throw new Error("Failed to fetch owners");
         const data = await res.json();
         setOwners(data);
@@ -94,7 +94,7 @@ const PetVaccinationPage = () => {
     }
 
     try {
-      const orderRes = await fetch("http://127.0.0.1:8000/api/create-razorpay-order/", {
+      const orderRes = await fetch("https://pawsnest-backend.onrender.com/api/create-razorpay-order/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -123,7 +123,7 @@ const PetVaccinationPage = () => {
         theme: { color: "#764ba2" },
         handler: async (response) => {
           try {
-            const bookingRes = await fetch("http://127.0.0.1:8000/api/vaccination-bookings/", {
+            const bookingRes = await fetch("https://pawsnest-backend.onrender.com/api/vaccination-bookings/", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",

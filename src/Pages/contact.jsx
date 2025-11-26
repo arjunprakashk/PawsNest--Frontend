@@ -80,7 +80,7 @@ const FeedbackForm = ({ token }) => {
     setError("");
 
     try {
-      const res = await fetch("http://localhost:8000/api/feedbacks/", {
+      const res = await fetch("https://pawsnest-backend.onrender.com/api/feedbacks/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -139,7 +139,7 @@ const AdopterFeedbacks = ({ token }) => {
   }, []);
 
   const fetchFeedbacks = async () => {
-    const res = await fetch("http://localhost:8000/api/feedbacks/", {
+    const res = await fetch("https://pawsnest-backend.onrender.com/api/feedbacks/", {
       headers: { Authorization: `Bearer ${token}` },
     });
     const data = await res.json();
@@ -169,7 +169,7 @@ const OwnerFeedbacks = ({ token }) => {
   }, []);
 
   const fetchAllFeedbacks = async () => {
-    const res = await fetch("http://localhost:8000/api/feedbacks/", {
+    const res = await fetch("https://pawsnest-backend.onrender.com/api/feedbacks/", {
       headers: { Authorization: `Bearer ${token}` },
     });
     const data = await res.json();
@@ -177,7 +177,7 @@ const OwnerFeedbacks = ({ token }) => {
   };
 
   const handleReply = async (id, replyText) => {
-    await fetch(`http://localhost:8000/api/feedbacks/${id}/reply/`, {
+    await fetch(`https://pawsnest-backend.onrender.com/api/feedbacks/${id}/reply/`, {
       method: "POST",
       headers: { "Content-Type": "application/json", Authorization: `Bearer ${token}` },
       body: JSON.stringify({ reply: replyText }),
