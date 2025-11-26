@@ -34,7 +34,7 @@ const ChatBot = () => {
 
     try {
       const res = await fetch(
-        `http://127.0.0.1:8000/api/chatbot/?message=${encodeURIComponent(input)}`
+        `https://pawsnest-backend.onrender.com/api/chatbot/?message=${encodeURIComponent(input)}`
       );
       const data = await res.json();
 
@@ -61,7 +61,7 @@ const ChatBot = () => {
     const imgUrl = pet.image
       ? pet.image.startsWith("http")
         ? pet.image
-        : `http://127.0.0.1:8000${pet.image}`
+        : `https://pawsnest-backend.onrender.com${pet.image}`
       : "https://via.placeholder.com/200x150?text=No+Image";
 
     return (
