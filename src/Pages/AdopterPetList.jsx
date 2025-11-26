@@ -19,7 +19,7 @@ const AdopterPetListPage = () => {
 
   const fetchPets = async () => {
     try {
-      const res = await fetch("http://localhost:8000/api/pets/", {
+      const res = await fetch("https://pawsnest-backend.onrender.com/api/pets/", {
         headers: token ? { Authorization: `Bearer ${token}` } : {},
       });
       const data = await res.json();
@@ -59,7 +59,7 @@ const AdopterPetListPage = () => {
     image
       ? image.startsWith("http")
         ? image
-        : `http://localhost:8000${image}`
+        : `https://pawsnest-backend.onrender.com${image}`
       : "https://via.placeholder.com/300x200?text=No+Image";
 
   if (loading) return <div className="text-center mt-5">Loading pets...</div>;

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 
-const BASE_URL = "http://localhost:8000/api";
+const BASE_URL = "https://pawsnest-backend.onrender.com/api";
 
 const Login = () => {
   const [identifier, setIdentifier] = useState("");

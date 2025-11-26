@@ -21,13 +21,13 @@ const BookingsPage = () => {
     const fetchBookings = async () => {
       try {
         const [shelterRes, vaccinationRes, groomingRes] = await Promise.all([
-          fetch("http://localhost:8000/api/shelter-bookings/", {
+          fetch("https://pawsnest-backend.onrender.com/api/shelter-bookings/", {
             headers: { Authorization: `Bearer ${token}` },
           }),
-          fetch("http://localhost:8000/api/vaccination-bookings/", {
+          fetch("https://pawsnest-backend.onrender.com/api/vaccination-bookings/", {
             headers: { Authorization: `Bearer ${token}` },
           }),
-          fetch("http://localhost:8000/api/grooming-bookings/", {
+          fetch("https://pawsnest-backend.onrender.com/api/grooming-bookings/", {
             headers: { Authorization: `Bearer ${token}` },
           }),
         ]);

@@ -21,7 +21,7 @@ const ProfilePage = () => {
 
   const fetchUser = async () => {
     try {
-      const res = await fetch("http://localhost:8000/api/auth/profile/", {
+      const res = await fetch("https://pawsnest-backend.onrender.com/api/auth/profile/", {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (!res.ok) throw new Error("Failed to fetch profile");
@@ -41,7 +41,7 @@ const ProfilePage = () => {
 
   const handleSave = async () => {
     try {
-      const res = await fetch("http://localhost:8000/api/auth/profile/", {
+      const res = await fetch("https://pawsnest-backend.onrender.com/api/auth/profile/", {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",

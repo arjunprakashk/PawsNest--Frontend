@@ -17,7 +17,7 @@ const PetMessageBox = ({ petId }) => {
   // Fetch or create chat room for this pet
   const fetchChatRoom = async () => {
     try {
-      const res = await fetch(`http://localhost:8000/api/chats/?pet=${petId}`, {
+      const res = await fetch(`https://pawsnest-backend.onrender.com/api/chats/?pet=${petId}`, {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
@@ -31,7 +31,7 @@ const PetMessageBox = ({ petId }) => {
       if (data.length > 0) {
         setChatId(data[0].id);
       } else {
-        const createRes = await fetch(`http://localhost:8000/api/chats/`, {
+        const createRes = await fetch(`https://pawsnest-backend.onrender.com/api/chats/`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -53,7 +53,7 @@ const PetMessageBox = ({ petId }) => {
   const fetchMessages = async () => {
     if (!chatId) return;
     try {
-      const res = await fetch(`http://localhost:8000/api/chats/${chatId}/messages/`, {
+      const res = await fetch(`https://pawsnest-backend.onrender.com/api/chats/${chatId}/messages/`, {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
@@ -87,7 +87,7 @@ const PetMessageBox = ({ petId }) => {
     if (!newMessage.trim() || !chatId) return;
 
     try {
-      const res = await fetch(`http://localhost:8000/api/chats/${chatId}/send/`, {
+      const res = await fetch(`https://pawsnest-backend.onrender.com/api/chats/${chatId}/send/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

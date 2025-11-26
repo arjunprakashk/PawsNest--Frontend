@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-const BASE_URL = "http://localhost:8000/api";
+const BASE_URL = "https://pawsnest-backend.onrender.com/api";
 
 const ChatPage = () => {
   const { petId } = useParams();

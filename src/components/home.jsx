@@ -40,7 +40,7 @@ const HomePage = () => {
 
   const fetchPets = async () => {
     try {
-      const res = await fetch("http://localhost:8000/api/pets/", {
+      const res = await fetch("https://pawsnest-backend.onrender.com/api/pets/", {
         headers: token
           ? { Authorization: `Bearer ${token}` }
           : { "Content-Type": "application/json" },
@@ -62,7 +62,7 @@ const HomePage = () => {
 
   const fetchFeedbacks = async () => {
     try {
-      const res = await fetch("http://localhost:8000/api/feedbacks/", {
+      const res = await fetch("https://pawsnest-backend.onrender.com/api/feedbacks/", {
         headers: token
           ? { Authorization: `Bearer ${token}` }
           : { "Content-Type": "application/json" },
@@ -76,7 +76,7 @@ const HomePage = () => {
 
   const getPetImage = (image) => {
     if (!image) return "https://via.placeholder.com/300x200?text=No+Image";
-    return image.startsWith("http") ? image : `http://localhost:8000${image}`;
+    return image.startsWith("http") ? image : `https://pawsnest-backend.onrender.com${image}`;
   };
 
   const handleChange = (e) => {
@@ -93,7 +93,7 @@ const HomePage = () => {
       return;
     }
     try {
-      const res = await fetch("http://localhost:8000/api/feedbacks/", {
+      const res = await fetch("https://pawsnest-backend.onrender.com/api/feedbacks/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

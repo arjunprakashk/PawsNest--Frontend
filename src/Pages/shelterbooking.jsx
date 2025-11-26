@@ -27,7 +27,7 @@ const ShelterBookingPage = () => {
   useEffect(() => {
     const fetchOwners = async () => {
       try {
-        const response = await fetch("http://localhost:8000/api/owners/");
+        const response = await fetch("https://pawsnest-backend.onrender.com/api/owners/");
         if (!response.ok) throw new Error("Failed to fetch owner list");
         const data = await response.json();
         setOwners(data);
@@ -62,7 +62,7 @@ const ShelterBookingPage = () => {
   // 🟩 Submit booking after successful payment
   const submitBooking = async () => {
     try {
-      const response = await fetch("http://localhost:8000/api/shelter-bookings/", {
+      const response = await fetch("https://pawsnest-backend.onrender.com/api/shelter-bookings/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -125,7 +125,7 @@ const ShelterBookingPage = () => {
     }
 
     try {
-      const orderRes = await fetch("http://localhost:8000/api/create-razorpay-order/", {
+      const orderRes = await fetch("https://pawsnest-backend.onrender.com/api/create-razorpay-order/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

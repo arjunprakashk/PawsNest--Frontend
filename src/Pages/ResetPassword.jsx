@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useParams, useNavigate } from "react-router-dom";
 
-const BASE_URL = "http://localhost:8000/api";
+const BASE_URL = "https://pawsnest-backend.onrender.com/api";
 
 const ResetPassword = () => {
   const { userId, token } = useParams();

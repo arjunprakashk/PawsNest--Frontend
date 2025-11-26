@@ -20,7 +20,7 @@ const Requests = () => {
 
   const fetchCurrentUser = async () => {
     try {
-      const res = await fetch("http://localhost:8000/api/auth/me/", {
+      const res = await fetch("https://pawsnest-backend.onrender.com/api/auth/me/", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -32,7 +32,7 @@ const Requests = () => {
 
   const fetchRequests = async () => {
     try {
-      const res = await fetch("http://localhost:8000/api/adoption-requests/", {
+      const res = await fetch("https://pawsnest-backend.onrender.com/api/adoption-requests/", {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
@@ -51,7 +51,7 @@ const Requests = () => {
   const handleAction = async (id, action) => {
     try {
       const res = await fetch(
-        `http://localhost:8000/api/adoption-requests/${id}/respond/`,
+        `https://pawsnest-backend.onrender.com/api/adoption-requests/${id}/respond/`,
         {
           method: "POST",
           headers: {

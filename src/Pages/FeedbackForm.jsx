@@ -14,7 +14,7 @@ const FeedbackForm = () => {
     setError("");
 
     try {
-      const res = await fetch("http://localhost:8000/api/feedbacks/", {
+      const res = await fetch("https://pawsnest-backend.onrender.com/api/feedbacks/", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

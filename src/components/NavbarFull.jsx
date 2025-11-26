@@ -25,7 +25,7 @@ const NavbarFull = () => {
 
   const fetchNotifications = async () => {
     try {
-      const res = await fetch("http://localhost:8000/api/notifications/", {
+      const res = await fetch("https://pawsnest-backend.onrender.com/api/notifications/", {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,

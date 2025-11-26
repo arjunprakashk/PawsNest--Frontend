@@ -20,7 +20,7 @@ const PetDetailAdopter = () => {
 
   const fetchPetDetails = async () => {
     try {
-      const res = await fetch(`http://localhost:8000/api/pets/${id}/`, {
+      const res = await fetch(`https://pawsnest-backend.onrender.com/api/pets/${id}/`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       if (!res.ok) throw new Error("Failed to load pet details.");
@@ -35,7 +35,7 @@ const PetDetailAdopter = () => {
 
   const sendAdoptionRequest = async () => {
     try {
-      const res = await fetch(`http://localhost:8000/api/adoption-requests/`, {
+      const res = await fetch(`https://pawsnest-backend.onrender.com/api/adoption-requests/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -55,7 +55,7 @@ const PetDetailAdopter = () => {
 
   const getPetImage = (image) => {
     if (!image) return "https://via.placeholder.com/600x400?text=No+Image";
-    return image.startsWith("http") ? image : `http://localhost:8000${image}`;
+    return image.startsWith("http") ? image : `https://pawsnest-backend.onrender.com${image}`;
   };
 
   if (loading) return <p className="text-center mt-5 fs-5">Loading pet details...</p>;

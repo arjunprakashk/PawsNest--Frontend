@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const BASE_URL = "http://localhost:8000/api";
+const BASE_URL = "https://pawsnest-backend.onrender.com/api";
 
 const AdminHome = () => {
   const [dashboard, setDashboard] = useState({});

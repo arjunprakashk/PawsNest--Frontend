@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 
-const BASE_URL = "http://localhost:8000/api";
+const BASE_URL = "https://pawsnest-backend.onrender.com/api";
 
 const ForgotPassword = () => {
   const [email, setEmail] = useState("");
