@@ -22,7 +22,7 @@ const OwnerChatPage = () => {
 
   const fetchChatRooms = async () => {
     try {
-      const res = await fetch("http://localhost:8000/api/chatrooms/", { headers: authHeaders });
+      const res = await fetch("https://pawsnest-backend.onrender.com/api/chatrooms/", { headers: authHeaders });
       if (!res.ok) throw new Error("Failed to fetch chat rooms");
       const data = await res.json();
       setChatRooms(data);
@@ -33,7 +33,7 @@ const OwnerChatPage = () => {
 
   const fetchMessages = async (roomId) => {
     try {
-      const res = await fetch(`http://localhost:8000/api/chatrooms/${roomId}/messages/`, { headers: authHeaders });
+      const res = await fetch(`https://pawsnest-backend.onrender.com/api/chatrooms/${roomId}/messages/`, { headers: authHeaders });
       if (!res.ok) throw new Error("Failed to fetch messages");
       const data = await res.json();
       setMessages(data);
@@ -53,7 +53,7 @@ const OwnerChatPage = () => {
   const sendMessage = async () => {
     if (!newMessage.trim() || !selectedRoom) return;
     try {
-      const res = await fetch(`http://localhost:8000/api/chatrooms/${selectedRoom.id}/messages/`, {
+      const res = await fetch(`https://pawsnest-backend.onrender.com/api/chatrooms/${selectedRoom.id}/messages/`, {
         method: "POST",
         headers: authHeaders,
         body: JSON.stringify({ message: newMessage }),

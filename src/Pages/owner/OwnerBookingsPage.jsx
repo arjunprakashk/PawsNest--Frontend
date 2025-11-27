@@ -20,13 +20,13 @@ const OwnerBookingsPage = () => {
   const fetchBookings = async () => {
     try {
       const [shelterRes, vaccinationRes, groomingRes] = await Promise.all([
-        fetch("http://localhost:8000/api/shelter-bookings/", {
+        fetch("https://pawsnest-backend.onrender.com/api/shelter-bookings/", {
           headers: { Authorization: `Bearer ${token}` },
         }),
-        fetch("http://localhost:8000/api/vaccination-bookings/", {
+        fetch("https://pawsnest-backend.onrender.com/api/vaccination-bookings/", {
           headers: { Authorization: `Bearer ${token}` },
         }),
-        fetch("http://localhost:8000/api/grooming-bookings/", {
+        fetch("https://pawsnest-backend.onrender.com/api/grooming-bookings/", {
           headers: { Authorization: `Bearer ${token}` },
         }),
       ]);
@@ -54,9 +54,9 @@ const OwnerBookingsPage = () => {
   const handleRespond = async (bookingType, bookingId, action) => {
     try {
       const urlMap = {
-        shelter: `http://localhost:8000/api/shelter-bookings/${bookingId}/respond/`,
-        vaccination: `http://localhost:8000/api/vaccination-bookings/${bookingId}/respond/`,
-        grooming: `http://localhost:8000/api/grooming-bookings/${bookingId}/respond/`,
+        shelter: `https://pawsnest-backend.onrender.com/api/shelter-bookings/${bookingId}/respond/`,
+        vaccination: `https://pawsnest-backend.onrender.com/api/vaccination-bookings/${bookingId}/respond/`,
+        grooming: `https://pawsnest-backend.onrender.com/api/grooming-bookings/${bookingId}/respond/`,
       };
 
       const response = await fetch(urlMap[bookingType], {

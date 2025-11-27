@@ -19,7 +19,7 @@ const OwnerHome = () => {
   const fetchPets = async () => {
     if (!token) return;
     try {
-      const res = await fetch("http://localhost:8000/api/pets/", {
+      const res = await fetch("https://pawsnest-backend.onrender.com/api/pets/", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -32,7 +32,7 @@ const OwnerHome = () => {
   const fetchBookings = async () => {
     if (!token) return;
     try {
-      const res = await fetch("http://localhost:8000/api/shelter-bookings/", {
+      const res = await fetch("https://pawsnest-backend.onrender.com/api/shelter-bookings/", {
         headers: { Authorization: `Bearer ${token}` },
       });
       const data = await res.json();
@@ -165,7 +165,7 @@ const OwnerHome = () => {
                           ) {
                             try {
                               const res = await fetch(
-                                `http://localhost:8000/api/pets/${pet.id}/`,
+                                `https://pawsnest-backend.onrender.com/api/pets/${pet.id}/`,
                                 {
                                   method: "DELETE",
                                   headers: {

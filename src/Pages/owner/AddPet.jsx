@@ -61,7 +61,7 @@ const PetAddPage = () => {
 
     if (isTokenExpired() && refreshToken) {
       try {
-        const res = await fetch("http://localhost:8000/api/token/refresh/", {
+        const res = await fetch("https://pawsnest-backend.onrender.com/api/token/refresh/", {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ refresh: refreshToken }),
@@ -90,7 +90,7 @@ const PetAddPage = () => {
     }
 
     try {
-      const res = await fetch("http://localhost:8000/api/pets/", {
+      const res = await fetch("https://pawsnest-backend.onrender.com/api/pets/", {
         method: "POST",
         headers: { Authorization: `Bearer ${token}` },
         body: formData,

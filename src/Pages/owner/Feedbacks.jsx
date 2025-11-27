@@ -9,7 +9,7 @@ const FeedbackList = () => {
   useEffect(() => {
     const fetchFeedbacks = async () => {
       try {
-        const res = await fetch("http://localhost:8000/api/feedbacks/", {
+        const res = await fetch("https://pawsnest-backend.onrender.com/api/feedbacks/", {
           headers: { Authorization: `Bearer ${token}` },
         });
         const data = await res.json();
@@ -25,7 +25,7 @@ const FeedbackList = () => {
 
   const handleReply = async (id, replyText) => {
     try {
-      const res = await fetch(`http://localhost:8000/api/feedbacks/${id}/reply/`, {
+      const res = await fetch(`https://pawsnest-backend.onrender.com/api/feedbacks/${id}/reply/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

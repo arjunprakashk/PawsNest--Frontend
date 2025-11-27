@@ -25,7 +25,7 @@ const EditPetPage = () => {
 
   const fetchPet = async () => {
     try {
-      const res = await fetch(`http://localhost:8000/api/pets/${id}/`, {
+      const res = await fetch(`https://pawsnest-backend.onrender.com/api/pets/${id}/`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
@@ -64,7 +64,7 @@ const EditPetPage = () => {
       Object.keys(pet).forEach((key) => formData.append(key, pet[key]));
       if (imageFile) formData.append("image", imageFile);
 
-      const res = await fetch(`http://localhost:8000/api/pets/${id}/`, {
+      const res = await fetch(`https://pawsnest-backend.onrender.com/api/pets/${id}/`, {
         method: "PATCH",
         headers: {
           Authorization: `Bearer ${token}`,

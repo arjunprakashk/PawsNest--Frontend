@@ -4,7 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "aos/dist/aos.css";
 import AOS from "aos";
 
-const BASE_URL = "http://localhost:8000/api";
+const BASE_URL = "https://pawsnest-backend.onrender.com/api";
 
 const PetDetailOwner = () => {
   const { id } = useParams();
@@ -61,7 +61,7 @@ const PetDetailOwner = () => {
 
   const getPetImage = (image) => {
     if (!image) return "https://via.placeholder.com/600x400?text=No+Image";
-    return image.startsWith("http") ? image : `http://localhost:8000${image}`;
+    return image.startsWith("http") ? image : `https://pawsnest-backend.onrender.com${image}`;
   };
 
   // --- Chat functions ---
